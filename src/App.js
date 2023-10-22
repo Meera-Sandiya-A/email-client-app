@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   addReadEmail,
@@ -13,11 +13,7 @@ import ShowToast from "./common/showToast";
 import EmailList from "./components/EmailList";
 import EmailDetails from "./components/EmailDetails";
 import Filter from "./components/Filter";
-import {
-  getFavoriteEmails,
-  getReadEmails,
-  getUnreadEmails,
-} from "./common/utils";
+import { getEmailsByType } from "./common/utils";
 
 function App() {
   const { selectedEmail, emailList } = useSelector((state) => state.email);
@@ -58,7 +54,7 @@ function App() {
 
   useEffect(() => {
     if (emailList?.length) {
-      setEmails(emailList);
+      setEmails(getEmailsByType(emailList, activeTab));
     }
   }, [emailList]);
 
@@ -76,13 +72,7 @@ function App() {
 
   const handleTab = (type) => {
     dispatch(selectEmail(""));
-    if (type === "Unread") {
-      setEmails(getUnreadEmails(emailList));
-    } else if (type === "Read") {
-      setEmails(getReadEmails(emailList));
-    } else if (type === "Favorites") {
-      setEmails(getFavoriteEmails(emailList));
-    }
+    setEmails(getEmailsByType(emailList, type));
     setActiveTab(type);
   };
 
@@ -102,7 +92,7 @@ function App() {
         }}
       >
         {isLoading && <p>Loading...</p>}
-        {!isLoading && emails.length > 0 && (
+        {!isLoading && emails.length > 0 ? (
           <div>
             <EmailList emails={emails} />
             {data?.total > emails.length &&
@@ -116,6 +106,10 @@ function App() {
                   </button>
                 </div>
               )}
+          </div>
+        ) : (
+          <div className="notFound">
+            <p>No data found!</p>
           </div>
         )}
         {selectedEmail && emailDetail && (
