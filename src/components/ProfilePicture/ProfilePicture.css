@@ -1,0 +1,17 @@
+.profile-picture__img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.profile-picture__initials {
+  font-weight: bold;
+  color: #fff;
+}

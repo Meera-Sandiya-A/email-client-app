@@ -1,0 +1,46 @@
+.email-item {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.6rem;
+  padding: 2rem 2.8rem;
+  background-color: #fff;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.email-item--active {
+  border-color: var(--accent-color);
+}
+
+.email-item--read {
+    background-color: var(--read-bg-color);
+}
+
+.email-item__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.email-item__text-bold {
+  font-weight: 600;
+}
+
+.email-item__subject {
+  margin-bottom: 0.6rem;
+}
+
+.email-item__description {
+  margin-bottom: 0.8rem;
+}
+
+.email-item__dateAndFav {
+  display: flex;
+  gap: 4rem;
+}
+
+.email-item__fav {
+  color: var(--accent-color);
+  font-weight: 600;
+}

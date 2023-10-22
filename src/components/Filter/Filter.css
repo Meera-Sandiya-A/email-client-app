@@ -1,0 +1,29 @@
+.filter {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.filter__title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.filter__btn-group {
+  display: flex;
+  gap: 2rem;
+}
+
+.filter__tab {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+  border-radius: 5rem;
+  border: none;
+}
+
+.filter--active {
+  background-color: var(--filter-btn-color);
+}

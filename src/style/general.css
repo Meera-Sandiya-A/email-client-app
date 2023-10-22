@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #E54065;
+  --bg-color: #F4F5F9;
+  --border-color: #CFD2DC;
+  --text-color: #636363;
+  --filter-btn-color: #E1E4EA;
+  --read-bg-color: #F2F2F2;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.container {
+  padding: 5rem 6.8rem;
+}
+
+.email-container {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: .8fr 1fr;
+  column-gap: 3.4rem;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  background: none;
+  border-radius: 5rem;
+  border: none;
+  text-align: center;
+  font-size: 1.6rem;
+  transition: all .2s;
+}
+
+.loadMore {
+  text-align: center;
+  padding: 2rem;
+}
+
+.btn-loadMore {
+  font-size: 1.4rem;
+  border: .1rem solid #E54065;
+  color: var(--text-color);
+}
+
+.btn-loadMore:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
